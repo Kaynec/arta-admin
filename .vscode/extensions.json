@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "antfu.iconify",
+    "antfu.unocss",
+    "csstools.postcss"
+  ]
+}

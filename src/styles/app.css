@@ -1,0 +1,14 @@
+@import "./markdown.css";
+
+// Apply global css rules
+html {
+  @apply bg-lightbg;
+  @apply text-textl;
+}
+body {
+  margin: 0;
+}
+html.dark {
+  @apply bg-darkbg;
+  @apply text-textd;
+}
