@@ -5,8 +5,32 @@ html {
   @apply bg-lightbg;
   @apply text-textl;
 }
+
+@font-face {
+  font-family: "IranSans";
+  src: url("../assets/fonts/IRANSans.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "IranSans";
+  src: url("../assets/fonts/IRANSans.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "IranSans";
+  src: url("../assets/fonts/IRANSans.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "IranSans";
+  src: url("../assets/fonts/IRANSans.ttf");
+  font-weight: 700;
+}
+
 body {
   margin: 0;
+  direction: rtl;
+  font-family: "IranSans";
 }
 html.dark {
   @apply bg-darkbg;

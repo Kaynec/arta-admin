@@ -5,7 +5,14 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Aside: typeof import('./components/Aside.vue')['default']
+    Delete: typeof import('./components/Delete.vue')['default']
+    Edit: typeof import('./components/Edit.vue')['default']
+    EditPen: typeof import('./components/EditPen.vue')['default']
+    ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
+    Error: typeof import('./components/Error.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    Loading: typeof import('./components/Loading.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -11,7 +11,7 @@ import {
   presetWebFonts,
   presetIcons,
   presetTypography,
-} from "unocss"
+} from "unocss";
 
 export default defineConfig({
   // Here u can customize ur colors for light and dark mode
@@ -25,6 +25,7 @@ export default defineConfig({
       // Dark mode
       darkbg: "#22272E",
       textd: "#E0EDEE",
+      primary: "#3D297F",
     },
   },
   // Here you can declare custom classes which u can use in every component
@@ -36,6 +37,10 @@ export default defineConfig({
     [
       "icon-btn",
       "inline-block text-xl cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-accent",
+    ],
+    [
+      "router-link",
+      "flex p-3 items-center gap-2 text-primary w-full rounded-tr-2xl rounded-br-2xl transition duration-150 ease-in-out",
     ],
   ],
   presets: [
@@ -56,4 +61,4 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: "prose prose-sm m-auto text-left".split(" "),
-})
+});

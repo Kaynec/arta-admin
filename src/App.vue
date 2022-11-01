@@ -1,18 +1,36 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-
-useHead({
-  title: "Vide",
-  link: [
-    {
-      rel: "icon",
-      href: "/favicon.ico",
-    },
-  ],
-})
-</script>
-
 <template>
+  <notifications position="top center" />
   <RouterView />
 </template>
+<style scoped lang="scss">
+.vue-notification {
+  // styling
+  margin: 6rem 5px 5px;
+  padding: 1.5rem;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 0.5em;
+  z-index: 999999;
+
+  background: #44a4fc;
+  border: none;
+
+  &.success {
+    background: #68cd86;
+    color: #fff;
+    z-index: 9999999999;
+  }
+
+  &.warn {
+    background: #ffb648;
+    color: #fff;
+    z-index: 9999999999;
+  }
+
+  &.error {
+    background: #e54d42;
+    z-index: 9999999999;
+    color: #fff;
+  }
+}
+</style>
