@@ -1,11 +1,21 @@
 <template>
+  <FoodEdit
+    v-if="showEditFood"
+    :data="currentData"
+    @cancel="showEditFood = !showEditFood"
+  />
   <main>
-    {{ data }}
-    {{ foodModule }}
-    <!--  -->
     <div flex gap-5 justify-center flex-row-reverse max-w="11/12" mx-auto>
       <div class="flex items-center justify-center">
-        <button min-w-35 bg-primary text-white rounded-xl mx-1 p-3>
+        <button
+          min-w-35
+          bg-primary
+          text-white
+          rounded-xl
+          mx-1
+          p-3
+          @click="showEditFood = !showEditFood"
+        >
           افزودن غذا
         </button>
         <button min-w-35 bg-primary text-white rounded-xl mx-1 p-3>حذف</button>
@@ -139,18 +149,26 @@
 <script setup lang="ts">
 import { useFuse } from "@vueuse/integrations/useFuse";
 
-const handleDelete = (item: {
+interface ItemInterface {
   id: string | number;
   selected: boolean;
   name: string;
-}) => {};
+  modules: any[];
+}
 
-const data = ref([]);
+let showEditFood = $ref(false);
+let currentData = $ref({});
+
+const handleDelete = (item: ItemInterface) => {};
+
+const data = ref<ItemInterface[]>([]);
 const foodModule = ref([]);
 
 onBeforeMount(async () => {
   const { data: food } = await useAdminFetch("arta/food").json();
-  const { data: foodModuleData } = await useAdminFetch("arta/foodmodule").json();
+  const { data: foodModuleData } = await useAdminFetch(
+    "arta/foodmodule"
+  ).json();
 
   data.value = food.value;
   foodModule.value = foodModuleData.value;

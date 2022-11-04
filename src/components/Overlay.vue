@@ -1,0 +1,18 @@
+<template>
+  <div
+    left-0
+    top-0
+    absolute
+    h-screen
+    z-9
+    w-screen
+    items-center
+    justify-center
+    flex
+    bg-black
+    bg-opacity-60
+    backdrop-blur-sm
+  >
+    <slot></slot>
+  </div>
+</template>

@@ -6,10 +6,14 @@ import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Unocss from "unocss/vite";
 import path from "path";
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { quasar, transformAssetUrls } from "@quasar/vite-plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // server: {
+  //   port: 5173,
+  // },
   resolve: {
     alias: {
       "~/": `${path.resolve(__dirname, "src")}/`,
@@ -20,6 +24,9 @@ export default defineConfig({
     vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
+    }),
+    quasar({
+      sassVariables: "src/quasar-variables.sass",
     }),
     // https://github.com/unocss/unocss
     Unocss(),
@@ -40,6 +47,12 @@ export default defineConfig({
         "vue/macros",
         "@vueuse/head",
         "@vueuse/core",
+        {
+          "@kyvg/vue3-notification": [
+            // default imports
+            ["notify ", "alertify"],
+          ],
+        },
       ],
       dts: "src/auto-imports.d.ts",
       dirs: ["src/composables", "src/store"],

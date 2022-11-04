@@ -6,13 +6,18 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Aside: typeof import('./components/Aside.vue')['default']
+    Cancel: typeof import('./components/Buttons/Cancel.vue')['default']
+    Confirm: typeof import('./components/Buttons/Confirm.vue')['default']
     Delete: typeof import('./components/Delete.vue')['default']
     Edit: typeof import('./components/Edit.vue')['default']
-    EditPen: typeof import('./components/EditPen.vue')['default']
+    EditBlogCategory: typeof import('./components/EditBlogCategory.vue')['default']
+    EditMessage: typeof import('./components/EditMessage.vue')['default']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     Error: typeof import('./components/Error.vue')['default']
+    FoodEdit: typeof import('./components/FoodEdit.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Loading: typeof import('./components/Loading.vue')['default']
+    Overlay: typeof import('./components/Overlay.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -4,6 +4,14 @@ import "@unocss/reset/tailwind.css";
 
 import Notifications from "@kyvg/vue3-notification";
 
+import { Quasar } from 'quasar'
+
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
+
+// Import Quasar css
+import 'quasar/src/css/index.sass'
+
 import "uno.css";
 import "./styles/app.css";
 
@@ -42,4 +50,9 @@ router.beforeEach((to, from, next) => {
 });
 
 // App creation
-createApp(App).use(pinia).use(Notifications).use(router).mount("#app");
+createApp(App)
+  .use(Quasar)
+  .use(pinia)
+  .use(Notifications)
+  .use(router)
+  .mount("#app");

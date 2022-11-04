@@ -78,7 +78,7 @@
         to="/sicknessrecord"
       >
         <div class="i-mdi:emoticon-sick-outline" />
-        سوابش بیماری
+        سوابق بیماری
       </RouterLink>
       <RouterLink
         class="router-link"
